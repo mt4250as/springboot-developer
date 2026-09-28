@@ -1,4 +1,4 @@
-package me.scpark.springdeveloper;
+package me.scpark.springdeveloper.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

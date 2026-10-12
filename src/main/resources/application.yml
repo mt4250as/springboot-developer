@@ -5,4 +5,5 @@ spring:
     properties:
       hibernate:
         format_sql: true
+        charset: UTF-8
     defer-datasource-initialization: true

@@ -11,7 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.jdbc.Sql;
 
 import java.util.List;
-import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -35,19 +34,17 @@ class MemberRepositoryTest {
         assertThat(member.size()).isEqualTo(3);
 
     }
-    @Sql("/insrt-member.sql")
+    @Sql("/insert-members.sql")
     @DisplayName("member 테이블에서 id가 2인 레코드 가져오기")
     @Test
     public void getMemberById2() {
         //준비
 
         //실행
-       Optional<Member> member = memberRepository.findById(2L);
-       if (member.isPresent()){
-           Member result = member.get();
-       }
+        Member member = memberRepository.findById(2L).get();
+
         //검증
-        assertThat(member.getName()).isEqualtTo("B");
+        assertThat(member.getName()).isEqualTo("B");
     }
 
 }

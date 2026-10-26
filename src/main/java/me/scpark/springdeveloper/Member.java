@@ -5,10 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.AccessLevel;
+import lombok.*;
 
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -21,6 +18,7 @@ public class Member {
 
     @Column(name="id", updatable = false)
     private Long id;
+    @Setter(AccessLevel.PUBLIC)
     @Column(name="name", nullable = false)
     private String name;
     public Member (String nane) {
